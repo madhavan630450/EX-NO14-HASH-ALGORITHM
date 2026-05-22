@@ -1,6 +1,8 @@
 # EX-NO14-HASH-ALGORITHM
-## NAME:LOKESH M
-## REG NO:212224040173
+### NAME: MARIMUTHU MATHAVAN
+### REG.NO: 212224230153
+### DATE: 22-05-2026
+
 ## AIM:
 To implement HASH ALGORITHM
 
@@ -28,51 +30,62 @@ To implement HASH ALGORITHM
 
 
 ## Program:
-
 ```
-
 #include <stdio.h>
 #include <string.h>
+
 // Function to compute a simple hash using XOR and addition
 void computeSimpleHash(const char *message, unsigned char *hash) {
-unsigned char temp = 0;
-// Simple hash computation: XOR and addition
-for (int i = 0; message[i] != '\0'; i++) {
-temp = temp ^ message[i]; // XOR each character
-temp += message[i]; // Add each character's value
+    unsigned char temp = 0;
+
+    // Simple hash computation: XOR and addition
+    for (int i = 0; message[i] != '\0'; i++) {
+        temp = temp ^ message[i];  // XOR each character
+        temp += message[i];        // Add each character's value
+    }
+    
+    // Store the result in the hash
+    *hash = temp;
 }
-// Store the result in the hash
-*hash = temp;
-}
+
 int main() {
-char message[256]; // Buffer for the input message
-unsigned char hash; // Buffer for the hash (only 1 byte for simplicity)
-char receivedHash[3]; // Buffer for input of received hash (in hex format)
-// Step 1: Input the message
-printf("Enter the message: ");
-scanf("%s", message);
-// Step 2: Compute the simple hash
-computeSimpleHash(message, &hash);
-// Step 3: Display the computed hash in hexadecimal format
-printf("Computed Hash (in hex): %02x\n", hash);
-// Optional Step 5: Verify the hash
-printf("Enter the received hash (in hex): ");
-scanf("%s", receivedHash);
-// Convert received hash from hex string to an unsigned char
-unsigned int receivedHashValue;
-sscanf(receivedHash, "%02x", &receivedHashValue);
-// Compare the computed hash with the received hash
-if (hash == receivedHashValue) {
-printf("Hash verification successful. Message is unchanged.\n");
-} else {
-printf("Hash verification failed. Message has been altered.\n");
-}
-return 0;
+    char message[256];      // Buffer for the input message
+    unsigned char hash;     // Buffer for the hash (only 1 byte for simplicity)
+    char receivedHash[3];   // Buffer for input of received hash (in hex format)
+
+    // Step 1: Input the message
+    printf("Enter the message: ");
+    scanf("%s", message);
+
+    // Step 2: Compute the simple hash
+    computeSimpleHash(message, &hash);
+
+    // Step 3: Display the computed hash in hexadecimal format
+    printf("Computed Hash (in hex): %02x\n", hash);
+
+    // Optional Step 5: Verify the hash
+    printf("Enter the received hash (in hex): ");
+    scanf("%s", receivedHash);
+
+    // Convert received hash from hex string to an unsigned char
+    unsigned int receivedHashValue;
+    sscanf(receivedHash, "%02x", &receivedHashValue);
+
+    // Compare the computed hash with the received hash
+    if (hash == receivedHashValue) {
+        printf("Hash verification successful. Message is unchanged.\n");
+    } else {
+        printf("Hash verification failed. Message has been altered.\n");
+    }
+
+    return 0;
 }
 
 ```
 ## Output:
-<img width="806" height="347" alt="image" src="https://github.com/user-attachments/assets/a75f8a9c-f559-403c-b176-d24fc685c783" />
+
+<img width="1697" height="932" alt="image" src="https://github.com/user-attachments/assets/2c160ec1-6207-41dd-bbf2-035c91c45f99" />
+
 
 ## Result:
 The program is executed successfully.
